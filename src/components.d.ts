@@ -40,15 +40,56 @@ export namespace Components {
     */
     'middle'?: string;
   }
+
+  interface OverflowCarousel {
+    'images': string[];
+    'numCards': number;
+    'title': string;
+  }
+  interface OverflowCarouselAttributes extends StencilHTMLAttributes {
+    'images'?: string[];
+    'numCards'?: number;
+    'title'?: string;
+  }
+
+  interface TestCarousel {
+    'cardWidth': number;
+    /**
+    * The first name
+    */
+    'images': string[];
+    'title': string;
+  }
+  interface TestCarouselAttributes extends StencilHTMLAttributes {
+    'cardWidth'?: number;
+    /**
+    * The first name
+    */
+    'images'?: string[];
+    'title'?: string;
+  }
+
+  interface UiLoader {
+    'gender': string;
+  }
+  interface UiLoaderAttributes extends StencilHTMLAttributes {
+    'gender'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'OverflowCarousel': Components.OverflowCarousel;
+    'TestCarousel': Components.TestCarousel;
+    'UiLoader': Components.UiLoader;
   }
 
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
+    'overflow-carousel': Components.OverflowCarouselAttributes;
+    'test-carousel': Components.TestCarouselAttributes;
+    'ui-loader': Components.UiLoaderAttributes;
   }
 
 
@@ -58,12 +99,36 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLOverflowCarouselElement extends Components.OverflowCarousel, HTMLStencilElement {}
+  var HTMLOverflowCarouselElement: {
+    prototype: HTMLOverflowCarouselElement;
+    new (): HTMLOverflowCarouselElement;
+  };
+
+  interface HTMLTestCarouselElement extends Components.TestCarousel, HTMLStencilElement {}
+  var HTMLTestCarouselElement: {
+    prototype: HTMLTestCarouselElement;
+    new (): HTMLTestCarouselElement;
+  };
+
+  interface HTMLUiLoaderElement extends Components.UiLoader, HTMLStencilElement {}
+  var HTMLUiLoaderElement: {
+    prototype: HTMLUiLoaderElement;
+    new (): HTMLUiLoaderElement;
+  };
+
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'overflow-carousel': HTMLOverflowCarouselElement
+    'test-carousel': HTMLTestCarouselElement
+    'ui-loader': HTMLUiLoaderElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'overflow-carousel': HTMLOverflowCarouselElement;
+    'test-carousel': HTMLTestCarouselElement;
+    'ui-loader': HTMLUiLoaderElement;
   }
 
 

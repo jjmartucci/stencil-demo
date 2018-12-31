@@ -1,15 +1,74 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <title>Stencil Component Starter</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Lato', sans-serif;
+        padding: 2rem;
+      }
 
-</head>
-<body>
+      .card {
+        padding: 1rem;
+        background: white;
+        border: #cecece;
+        margin: 0 1rem;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+      }
+    </style>
+    <!-- mapbox -->
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
-</body>
+    <script src="/build/mycomponent.js"></script>
+  </head>
+  <body>
+    <my-component
+      first="Stencil"
+      last="'Don't call me a framework' JS"
+    ></my-component>
+    <test-carousel title="Carousel">
+      <img
+        src="https://source.unsplash.com/AAH8Y1uw2Dg/300x200
+      "
+      />
+      <img
+        src="https://source.unsplash.com/eij9Y24Yc5w/300x200
+      "
+      />
+      <img
+        src="https://source.unsplash.com/yKZOt3szWe0/300x200
+      "
+      />
+    </test-carousel>
+    <overflow-carousel title="Overflow Carousel">
+      <div class="card">
+        <img
+          src="https://source.unsplash.com/AAH8Y1uw2Dg/300x200
+        "
+        />
+      </div>
+      <div class="card">
+        <img
+          src="https://source.unsplash.com/eij9Y24Yc5w/300x200
+        "
+        />
+      </div>
+      <div class="card">
+        <img
+          src="https://source.unsplash.com/yKZOt3szWe0/300x200
+        "
+        />
+      </div>
+    </overflow-carousel>
+    <ui-loader gender="male" />
+  </body>
 </html>

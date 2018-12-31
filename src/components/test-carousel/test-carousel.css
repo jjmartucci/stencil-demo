@@ -1,0 +1,25 @@
+ul {
+  list-style: none;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.controls button {
+  border: 0;
+  background: #9692af;
+  color: #d7eaea;
+  font-size: 1.2rem;
+  padding: .8rem 2rem;
+}
+
+.slides {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}

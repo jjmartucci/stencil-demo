@@ -1,0 +1,50 @@
+.Overflow-carousel__images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.Overflow-carousel__images__track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 300ms ease-in-out;
+}
+
+.Overflow-carousel__images__track--active {
+  justify-content: flex-start;
+}
+
+.Overflow-carousel__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.Overflow-carousel__controls__dot {
+  width: 14px;
+  height: 14px;
+  background: #222222;
+  border: 0;
+  display: inline-block;
+  margin: 0.2rem;
+  border-radius: 50%;
+  padding: 0;
+  transition: background 300ms ease-in-out;
+}
+
+.Overflow-carousel__controls__dot:focus {
+    outline: 0;
+}
+
+.Overflow-carousel__controls__dot--active {
+  background: #e4406f;
+}
