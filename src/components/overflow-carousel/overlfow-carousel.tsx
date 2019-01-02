@@ -26,10 +26,13 @@ export class MyComponent {
     );
   }
 
-  componentDidLoad() {
+  async componentDidLoad() {
     this.getCarouselWidth();
     const firstCard = this.host.firstElementChild;
     const cardWidth = firstCard.getBoundingClientRect().width;
+    var img = firstCard.querySelector("img");
+
+    await img.onload;
 
     // this is gross and probably doesn't work in some cases.
     const cardMargin = window.getComputedStyle(firstCard, null).marginLeft;
@@ -81,13 +84,12 @@ export class MyComponent {
 
     for (let i = 0; i < this.numCards; i++) {
       const buttonClass = `Overflow-carousel__controls__dot${
-        this.currentImage === i ? " Overflow-carousel__controls__dot--active" : ""
+        this.currentImage === i
+          ? " Overflow-carousel__controls__dot--active"
+          : ""
       }`;
       dots.push(
-        <button
-          class={buttonClass}
-          onClick={() => this.setActiveCard(i)}
-        />
+        <button class={buttonClass} onClick={() => this.setActiveCard(i)} />
       );
     }
     return dots;
